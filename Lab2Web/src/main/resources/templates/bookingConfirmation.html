@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Booking - Confirmation</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+    </style>
+    <script type="text/javascript">
+        function confirmBooking() {
+            const name = document.getElementById("userName").value;
+            const message = `Thank you, Your tickets have been confirmed!`;
+            alert(message);
+        }
+    </script>
+</head>
+
+<body>
+<section>
+    <header>
+        <h1>Event Booking Page - Booking Confirmation</h1>
+    </header>
+    <table>
+        <tr>
+            <th colspan="2">Your Booking Status</th>
+        </tr>
+        <tr>
+            <td><b>Please enter your name:</b></td>
+            <td>
+                <input type="text" id="userName" placeholder="Enter your name" required />
+            </td>
+        </tr>
+        <tr>
+            <td><b>Booking for Event:</b></td>
+            <td th:text="${eventName}"></td>
+        </tr>
+        <tr>
+            <td><b>Number of Tickets:</b></td>
+            <td th:text="${numTickets}"></td>
+        </tr>
+    </table>
+    <button onclick="confirmBooking()">Confirm Booking</button>
+</section>
+</body>
+
+</html>
